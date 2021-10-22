@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-//var MONGO_URI="mongodb+srv://auxilia1:auxilia1234@cluster0.bg8rf.mongodb.net/mern-attend"
+const MONGO_URI="mongodb+srv://auxilia1:auxilia1234@cluster0.bg8rf.mongodb.net/mern-attend"
 
 const connectDB = async () => {
   try {
