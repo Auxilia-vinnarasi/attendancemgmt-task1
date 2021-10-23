@@ -21,29 +21,27 @@ app.use("/users", userRoutes);
 app.use("/student", studentRoutes);
 app.use("/attendance", attendanceRoutes);
 
-//const __dirname = path.resolve();
+const __dirname = path.resolve();
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "/frontend/build")));
 
-{/*if (process.env.NODE_ENV === "production") {
-  app.use("/static",express.static(path.join(`${__dirname}/frontend/build`)));
-
-  app.get("/*", (req, res) =>
-    res.sendFile(path.join(`${__dirname}/frontend/build/index.html`))
+  app.get("*", (req, res) =>
+    res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"))
   );
 } else {
   app.get("/", (req, res) => {
     res.send("API is running....");
   });
 }
-*/}
 
-if(process.env.NODE_ENV ==="production")
+{/*if(process.env.NODE_ENV ==="production")
 {
     app.use("/",express.static("frontend/build"))   
 
     app.get("*",(req,res)=>{         //what is entry point for client
         res.sendFile(path.resolve(__dirname,"frontend/build/index.html"))
     })
-}
+}*/}
 
 app.use(errorHandler);
 app.use(notFound);
