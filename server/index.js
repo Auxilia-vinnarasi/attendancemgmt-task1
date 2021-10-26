@@ -35,15 +35,7 @@ if (process.env.NODE_ENV === "production") {
     res.send("API is running....");
   });
 }/*}
-{/*if(process.env.NODE_ENV==="production")
-{
- app.use("/",express.static("attendance-frontend/build"))
- app.get("*",(req,res)=>{
 
-     res.sendFile(path.resolve(__dirname,"attendance-frontend/build/index.html"))
- })
-}
-*/}
 
 
 {/*if(process.env.NODE_ENV ==="production")
